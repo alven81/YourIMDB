@@ -1,0 +1,26 @@
+{
+  "name": "YourIMDB",
+  "version": "1.0.0",
+  "description": "- Install dependencies:",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truntsVitalij/JSBasicCourse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truntsVitalij/JSBasicCourse/issues"
+  },
+  "homepage": "https://github.com/truntsVitalij/JSBasicCourse#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.49.7"
+  }
+}

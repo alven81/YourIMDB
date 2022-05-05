@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YourIMBD</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="icon" type="image/png" sizes="512x512" href="./img/icon.png">
+</head>
+
+<body>
+    <header class="header_main">
+        <div class="header_main_topbar">
+            <p>Welcome to our online shop</p>
+            <div class="header_main_topbar_login">
+                <p class="header_main_topbar_currency" id="google_translate_element">
+                    <script>
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement(
+                                { pageLanguage: 'en' },
+                                'google_translate_element'
+                            );
+                        }
+                    </script>
+                </p>
+                <span></span>
+                <div class="header_main_topbar_register">
+                    <a class="header_main_topbar_login_log" href="#">Log in</a>
+                    <p>&nbsp; or &nbsp;</p>
+                    <a class="header_main_topbar_login_sign" href="#">Sign up</a>
+                </div>
+            </div>
+        </div>
+        <div class="header_main_logobar">
+            <div class="header_main_logobar_logo">
+                <a href="./index.html"><img src="./svg/logo.svg" alt="Logo of YourIMBD"></img></a>
+                <div class="header_main_logobar_search">
+                    <input id="logobar_input" class="header_main_logobar_input" type="text" name=""
+                        placeholder="Search here">
+                    <select required class="header_main_logobar_select" name="imbd_search" id="logobar_select">
+                        <option value="" disabled selected>Categories</option>
+                        <option value="searchByFilm">Film Name</option>
+                        <option value="searchByYear">Year</option>
+                        <option value="searchByGenre">Genre</option>
+                        <option value="searchByActors">Actors</option>
+                    </select>
+                    <div>
+                        <button class="header_main_logobar_button"><img class="header_main_logobar_lope"
+                                src="./svg/loupe.svg"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="header_main_logobar_buttons">
+                <button class="header_main_logobar_buttons_cart"><img src="./svg/basket.svg" alt=""></button>
+                <button class="header_main_logobar_buttons_notification"><img src="./svg/notification.svg"
+                        alt=""></button>
+                <button class="header_main_logobar_buttons_avatar"><img src="./svg/avatar.svg" alt=""></button>
+            </div>
+        </div>
+        <nav class="header_navbar">
+            <div class="header_navbar_dropmenu">
+                <p class="header_navbar_dropmenu_block">
+                    <a class="header_navbar_dropmenu_block_btn">
+                        ALL COLLECTIONS
+                    </a>
+                </p>
+                <ul class="header_navbar_dropmenu_list hide">
+                    <!-- ALL COLLECTIONS MENU -->
+                </ul>
+            </div>
+            <div class="header_navbar_navmenu">
+                <ul class="header_navbar_navmenu_list">
+                    <a href="index.html">
+                        <li>Home
+                    </a></li>
+                    <a href="#">
+                        <li>Shop</li>
+                    </a>
+                    <a href="#">
+                        <li>Blog</li>
+                    </a>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact us</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section id="sliderBlock" class="slider container">
+            <div class="slider_block">
+                <div class="container_slider_css">
+                    <img class="photo_slider_css" src="./img/slide1.jpg" alt="">
+                    <img class="photo_slider_css" src="./img/slide2.jpg" alt="">
+                    <img class="photo_slider_css" src="./img/slide3.jpg" alt="">
+                    <img class="photo_slider_css" src="./img/slide4.jpg" alt="">
+                </div>
+            </div>
+            <div class="slider_next">
+                <!-- <div>
+                    <button class="trending_next_page">Next page &rarr; </button>
+                    <span>Page</span>
+                    <input class="trending_next_input" type="text" value="">
+                    <span class="trending_next_number">of 9999</span>
+                    <button class="trending_next_lt"> &lt; </button>
+                    <button class="trending_next_gt"> &gt; </button>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="feature container">
+            <div class="feature_block">
+                <a class="feature_block_link" href="#">
+                    <img class="feature_block_link_img" src="./svg/free-delivery.svg" alt="">
+                    <div class="feature_block_link_item">
+                        <b>Free Shipping</b>
+                        <span>Orders over $50</span>
+                    </div>
+                </a>
+            </div>
+            <div class="feature_block">
+                <a class="feature_block_link" href="#">
+                    <img class="" src="./svg/gift.svg" alt="">
+                    <div class="feature_block_link_item">
+                        <b>Smart Gift Card</b>
+                        <span>Buy $100 to get card</span>
+                    </div>
+                </a>
+            </div>
+            <div class="feature_block">
+                <a class="feature_block_link" href="#">
+                    <img class="" src="./svg/wallet.svg" alt="">
+                    <div class="feature_block_link_item">
+                        <b>Quick Payment</b>
+                        <span>100% secure payment</span>
+                    </div>
+                </a>
+            </div>
+            <div class="feature_block">
+                <a class="feature_block_link" href="#">
+                    <img class="" src="./svg/headset.svg" alt="">
+                    <div class="feature_block_link_item">
+                        <b>24/7 Support</b>
+                        <span>Quick support</span>
+                    </div>
+                </a>
+            </div>
+            
+        </section>
+
+        <section class="offer container">
+            <div class="offer_block">
+                <b>Love Theme</b>
+                <span>Starting from $5</span>
+                <a class="offer_set_top_link3" href="#sliderBlock">Read more</a>
+            </div>
+            <div class="offer_set">
+                <div class="offer_set_top">
+                    <b>Watch Set of Zombie</b>
+                    <span>Up to 20% discount</span>
+                    <a class="offer_set_top_link1" href="#sliderBlock">Read more</a>
+                </div>
+                <div class="offer_set_bottom">
+                    <b>The best of HollyWood series</b>
+                    <span>Free</span>
+                    <a class="offer_set_top_link2" href="#sliderBlock">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="trending container">
+            <h2>TRENDING</h2>
+            <div class="trending_cat">
+                <a href="#">Top 10</a>
+                <a href="#">Latest</a>
+                <a href="#">Best Sellers</a>
+            </div>
+            <div class="trending_dom dom ">
+                <!-- trending_dom -->
+            </div>
+            <div class="trending_next">
+                <!-- <div>
+                    <button class="trending_next_page">Next page &rarr; </button>
+                    <span>Page</span>
+                    <input class="trending_next_input" type="text" value="">
+                    <span class="trending_next_number">of 9999</span>
+                    <button class="trending_next_lt"> &lt; </button>
+                    <button class="trending_next_gt"> &gt; </button>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="watchlist container">
+            <h2>From your watchlist</h2>
+            <div class="watchlist_cat">
+                <svg class="watchlist_cat_flag" width="24px" height="34px" viewBox="0 0 24 34"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <polygon class="ipc-watchlist-ribbon__bg-ribbon" fill="#000000"
+                        points="24 0 0 0 0 32 12.2436611 26.2926049 24 31.7728343"></polygon>
+                    <polygon class="ipc-watchlist-ribbon__bg-hover"
+                        points="24 0 0 0 0 32 12.2436611 26.2926049 24 31.7728343"></polygon>
+                    <polygon class="ipc-watchlist-ribbon__bg-shadow"
+                        points="24 31.7728343 24 33.7728343 12.2436611 28.2926049 0 34 0 32 12.2436611 26.2926049">
+                    </polygon>
+                </svg>
+                <p>Sign in to access your Watchlist</p>
+                <p>Save shows and movies to keep track of what you want to watch.</p>
+            </div>
+            <div class="watchlist_dom dom">
+                <!-- watchlist_dom -->
+            </div>
+        </section>
+
+        <!-- <section class="product container">
+            <h2>OUR PRODUCTS</h2>
+            <div class="product_cat">
+                <a href="#">All Products</a>
+                <a href="#">Best Sellers</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">Todays Deals</a>
+            </div>
+            <div class="product_dom dom">
+                //product_dom
+            </div>
+        </section> -->
+        <footer class="footer_main container">
+            <div class="footer_main_top">
+                <div>
+                    <img class="footer_main_top_logo" src="./svg/logo.svg" alt="Logo of YourIMBD"></img>
+                    <div>
+                        <p>YourIMDB is the a popular IMDB site. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor</p>
+                    </div>
+                    <div class="footer_main_top_ic">
+                        <div><img src="./svg/ic-facebook.svg" alt="Facebook"></div>
+                        <div><img src="./svg/ic-twitter.svg" alt="Twitter"></div>
+                        <div><img src="./svg/ic-instagram.svg" alt="Instagram"></div>
+                        <div><img src="./svg/ic-pinterset.svg" alt="Pinterset"></div>
+                    </div>
+                </div>
+                <div>
+                    <p>Help</p>
+                    <p>Privacy Policy</p>
+                    <p>Shipping & Delivery</p>
+                    <p>Refund Policy</p>
+                    <p>Track Your Order</p>
+                </div>
+                <div>
+                    <p>Store</p>
+                    <p>Films</p>
+                    <p>Serials</p>
+                    <p>Actors</p>
+                    <p>Other</p>
+                </div>
+                <div>
+                    <p>Supports</p>
+                    <p>Feedback</p>
+                    <p>Contact us</p>
+                    <p>Download app</p>
+                    <p>Terms conditins</p>
+                </div>
+            </div>
+            <span class="footer_main_span"></span>
+            <div class="footer_main_bottom">
+                <div>
+                    <p>© 2022 YourIMDB - All rights reserved.</p>
+                </div>
+                <div class="footer_main_bottom_privacy">
+                    <p>Privacy</p>
+                    <p>Security</p>
+                    <p>Terms</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+        <div class="modal_signin hide">
+            <div class="modal_signin_alert hide">
+                <div class="modal_signin_alert_block" role="alert">
+                    <h3>There was a problem</h3>
+                    <img alt="Alert" class="" src="./img/alert.png"></img>
+                    <dl class="modal_signin_alert_list">
+                        <li>
+                            <span>Enter your name</span>
+                        </li>
+                        <li>
+                            <span>Enter your email</span>
+                        </li>
+                        <li>
+                            <span>Enter your password</span>
+                        </li>
+                    </dl>
+                </div>
+            </div>
+            <p class="modal_signin_account">Create account</p>
+            <div class="modal_signin_name">
+                <p>Your name</p>
+                <input id="create_name" type="text"></input>
+            </div>
+            <div class="modal_signin_email">
+                <p>Email</p>
+                <input id="create_email" type="email"></input>
+            </div>
+            <div class="modal_signin_password">
+                <p>Password</p>
+                <input id="create_password" type="password"></input>
+                <span>Passwords must be at least 8 characters.</span>
+            </div>
+            <div class="modal_signin_register">
+                <p>Re-enter password</p>
+                <input id="compare_password" type="password"></input>
+            </div>
+            <div class="modal_signin_buttonblock">
+                <p class="needtologin_alert hide">You already registered at YourIMDB, please Log In! You will be
+                    redirected
+                    to Log In form in 5 seconds</p>
+                <button class="modal_signin_buttonblock_button">Create your IMDB account</button>
+            </div>
+            <p class="modal_signin_loglink">Already have an account?</p>
+            <a class="modal_signin_loglink" href="">Log-In</a>
+        </div>
+
+        <div class="modal_login hide">
+            <p class="modal_login_account">Log-in</p>
+            <div class="modal_login_email">
+                <p>Email</p>
+                <input id="login_email" type="email"></input>
+                <span class="modal_login_span hide"><i>!</i> Enter your email</span>
+            </div>
+            <div class="modal_login_password">
+                <p>Password</p>
+                <input id="login_password" type="password"></input>
+                <span class="modal_login_span hide"><i>!</i> Enter your password</span>
+            </div>
+            <div class="modal_login_buttonblock">
+                <p class="needtosign_alert hide"><b>Your email is not registered yet. Please create an Account!</b></p>
+                <button class="modal_login_buttonblock_button">Log-in</button>
+            </div>
+            <div class="modal_login_keepsigned">
+                <input class="modal_login_keepsigned_check" name="remember_me" type="checkbox">
+                <p>Keep me signed in.</p>
+            </div>
+
+            <div class="modal_login_buttonblock_signin">
+                <p class="modal_login_loglink">New to IMDb?</p>
+                <button class="modal_login-signin_button">Create your IMDB account</button>
+            </div>
+        </div>
+
+        <div class="modal_cart">
+            <div class="modal_cart_element" hidden>
+                <div class="modal_cart_element_info">
+                    <div class="modal_cart_element_info_picture">
+                        <img src="./img/test_cart.jpg">
+                    </div>
+                    <div class="modal_cart_element_info_name">
+                        Star Trek II: The Wrath of Khan Star Trek II: The Wrath of Khan
+                    </div>
+                </div>
+                <hr class="modal_cart_divider">
+                <div class="modal_cart_element_total">
+                    <p>Quantity:&nbsp;
+                    <button class="modal_cart_minus">-</button></p>
+                    <p style="display: inline" class="modal_cart_element_quantity ${imdb_id}">Quantity</p>
+                    <button class="modal_cart_plus">+</button>
+                    <p>Price:&nbsp;
+                        <span class="modal_cart_element_price">price</span>
+                    </p>
+                </div>
+            </div>
+            <div class="modal_cart_total" hidden>
+                <p>Total films:&nbsp;<span>10</span></p>
+                <p>Total price:&nbsp;<span>100$</span></p>
+            </div>
+        </div>
+
+        <div class="modal_chat">
+            <div class="modal_chat_name">
+                <button class="modal_chat_name_arrow">
+                    <div class="modal_chat_state arrow_up"></div>
+                </button>
+                <p class="modal_chat_name_text">Please log in for chat!</p>
+            </div>
+            <ul class="modal_chat_text">
+
+                <!-- chat -->
+            </ul>
+            <div class="modal_chat_message">
+                <input class="modal_chat_message_input" type="text" name="chat" id="">
+                <button class="modal_chat_message_button">&#10148;</button>
+            </div>
+        </div>
+
+        <div class="modal_user hide">
+            <ul class="modal_user_list">
+                <li>Settings</li>
+                <li><span class="modal_user_list_span"></span></li>
+                <li class="modal_user_list_logout">Log Out</li>
+            </ul>
+        </div>
+
+    <script type="module" src="./js/set_user_login.js"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/set_credentials_to_localstorage.js"></script>
+    <script type="module" src="./js/login.js"></script>
+    <script type="module" src="./js/signup.js"></script>
+    <script type="module" src="./js/cart.js"></script>
+    <script type="module" src="./js/chat.js"></script>
+    <script type="module" src="./js/user_menu.js"></script>
+    <script src="./js/movie.js"></script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

@@ -1,0 +1,1279 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@mixin fontRubik($weight, $fontSize, $lineHeight) {
+    font: $weight #{$fontSize}px/#{$lineHeight}px "Rubik", sans-serif;
+  }
+
+@mixin fontMulish($weight, $fontSize, $lineHeight) {
+  font: $weight #{$fontSize}px/#{$lineHeight}px "Mulish", sans-serif;
+}
+
+@mixin flexFullCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexFullCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexBetweenCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+$bodyBackgroundColor: #000000;
+$bodyBackgroundSecColor: #7AC751; //FF9D43
+$bodyFontColor: #ffffff;
+$containerBackgroundColor: #000000;
+$navbarFontColor: #555555;
+$navbarBackgroundColor: #F0F0E1;
+$navbarDropMenu: #F7F8FA;
+$navbarDropMenuBorder: #E3E3E3;
+$sectionsLinks: #C2C2C2;
+$sectionsLinksHover: #2da010; //FF9D43
+$domElementBackgroundColor: #1A1A1A;
+$domElementStarColor: #F5C518;
+$domElementRatingColor: #9C999C;
+$domElementButtonColor: #2C2C2C;
+$alertColor: red;
+body {
+    position: relative;
+    margin: 0 auto;
+    width: 1440px;
+    @include fontRubik(400, 14, 14);
+    color: $bodyFontColor;
+    background-image: url(../img/bkg.png);
+    background-color: $bodyBackgroundColor;
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+        background-color: $bodyBackgroundSecColor;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #00c6fb, #005bea);
+    }
+}
+
+main {
+    background-color: $bodyBackgroundColor;
+}
+
+h2 {
+    @include fontMulish(700, 36, 45);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+.hide {
+    display: none !important;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1140px;
+    background-color: $containerBackgroundColor;
+}
+
+.header_main {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    background-color: $containerBackgroundColor;
+    &_topbar {
+        padding: 0 135px;
+        background-color: $bodyBackgroundSecColor;
+        display: flex;
+        justify-content: space-between;
+        @include fontRubik(400, 16, 19);
+        &_currency {
+            padding: 0;
+            margin: 0;
+            select {
+                background-color: $bodyBackgroundSecColor;
+                border: 1px solid $domElementBackgroundColor;
+                @include fontRubik(500, 16, 17);
+                color: $bodyFontColor;
+            }
+            &::after {
+                position: absolute;
+                content: url(../svg/arr_down.svg);
+                right: -15px;
+                top: -2px;
+            }
+        }
+        &_register {
+            @include flexBetweenCenter()
+        }
+        &_login {
+            display: flex;
+            align-items: center;
+            span {
+                margin: 0 20px 0 30px;
+                height: 19px;
+                width: 2px;
+                background-color: $bodyFontColor;
+            }
+            &_log, &_sign {
+                color: $bodyFontColor;
+                text-decoration: none;
+                transition: all 0.5s;
+                &:hover {
+                    color: $sectionsLinksHover;
+                }
+            }
+            
+        }
+    }
+    &_logobar {
+        position: relative;
+        @include flexBetweenCenter;
+        padding: 0 135px;
+        height: 94px;
+        background-color: $bodyBackgroundColor;
+        &_logo {
+            display: flex;
+            align-items: center;
+            max-height: 94px;
+        }
+        &_search {
+            box-sizing: border-box;
+            @include flexBetweenCenter;
+            width: 582px;
+            min-height: 46px;
+            border-radius: 8px;
+            border: 2px solid $bodyBackgroundSecColor;
+            padding: 0;
+            margin: 0;
+            select {
+                //box-sizing: border-box;
+                width: 122px;
+                height: 35px;
+                background: $bodyBackgroundColor;
+                border: none;
+                margin: 0;
+                color: $bodyFontColor;
+                cursor: pointer;
+                //transform: all 0.5s;
+                transition: 0.3s linear;
+                option[value=""][disabled] {
+                    display: none;
+                };
+                &:hover {
+                    font-size: 20px;
+                    width: 400px;
+                }
+            }
+            div {
+                @include flexFullCenter;
+                button {
+                    cursor: pointer;
+                    width: 56px;
+                    height: 46px;
+                    background-color: $bodyBackgroundSecColor;
+                    border: none;
+                }
+            }
+        }
+        &_buttons  {
+            button {
+                cursor: pointer;
+                margin: 0 20px 0 5px;
+                background-color: transparent;
+                border: 0;
+            }
+        }
+        &_lope {
+            transition: all 0.5s;
+            &:hover {
+                transform: scale(1.5);
+                
+            }
+        }
+        &_input[type="text"] {
+            box-sizing: border-box;
+            width: 375px;
+            height: 46px;
+            background: transparent;
+            border: none;
+            border-right: 1px solid $bodyFontColor;
+            padding-left: 25px;
+            color: $bodyFontColor;
+            outline: none;
+        }
+    }
+}
+
+.header_navbar {
+    display: flex;
+    justify-content: left;
+    height: 67px;
+    background-color: $navbarBackgroundColor;
+    padding: 0 135px;
+    &_dropmenu {
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 260px;
+        padding-left: 74px;
+        display: flex;
+        align-items: center;
+        background-color: $bodyBackgroundSecColor;
+        position: relative;
+        &_block {
+            //position: relative;
+            &::before {
+                position: absolute;
+                content: url(../svg/menu_left.svg);
+                left: 40px;
+                top: 20px;
+            }
+        }
+        &_list {
+            position: absolute;
+            top: 53px;
+            left: -105px;
+            transition: all 2s;
+            a {
+                text-decoration: none;
+                transition: height 2s;
+            }
+            li {
+                box-sizing: border-box;
+                display: flex;
+                justify-content:left;
+                align-items: center;
+                padding-left: 29px;
+                list-style: none;
+                @include fontRubik(400, 14, 17);
+                color: $navbarFontColor;
+                margin-left: 65px;
+                height: 41px;
+                width: 260px;
+                background-color: $navbarDropMenu;
+                border: 1px solid $navbarDropMenuBorder;
+                &:hover {
+                    background-color: $sectionsLinksHover;
+                    color: $bodyFontColor;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    &_navmenu {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &_list{
+            display: flex;
+            align-items: center;
+        }
+        li {
+            box-sizing: border-box;
+            list-style: none;
+            @include fontRubik(400, 14, 17);
+            color: $navbarFontColor;
+            text-transform: uppercase;
+            margin-left: 65px;
+            &:hover {
+                font-weight: 700;
+                color: $domElementButtonColor;
+                text-decoration: none;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.slider {
+    &_block {
+        @include flexFullCenter;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+}
+
+.feature {
+    @include flexBetweenCenter;
+    @include fontRubik(500, 20, 26);
+    margin: 70px auto;
+    &_block {
+        &_link {
+            gap: 15px;
+            text-decoration: none;
+            img {
+                display: block;
+                height: 58px;
+                transition: all 0.3s;
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all 0.3s;
+                }
+            }
+            @include flexBetweenCenter;
+            &_item {
+                text-align: left;
+                color: $bodyFontColor;
+                b {
+                    display: block;
+                }
+                span {
+                    display: block;
+                    @include fontRubik(400, 14, 26);
+                    color: rgba($bodyFontColor, 0.7);
+                }
+                &:hover {
+                    color: $sectionsLinksHover;
+                }
+            }
+        }
+    }
+}
+
+.offer {
+    @include flexBetweenCenter;
+    text-align: left;
+    gap: 19px;
+    margin-bottom: 120px;
+    b {
+        display: block;
+        @include fontMulish(700, 22, 26);
+    }
+    span {
+        display: block;
+        @include fontMulish(500, 20, 26);
+        color: $bodyBackgroundSecColor;
+    }
+    a {
+        display: block;
+        @include fontMulish(400, 16, 26);
+        color: inherit;
+        text-decoration: none;
+    }
+    &_block {
+        box-sizing: border-box;
+        background:  url('../img/best-films.jpg') no-repeat center /cover, #625e5e;
+        background-blend-mode: multiply;
+        background-position: cover;
+        background-repeat: no-repeat;
+        width: 669px;
+        height: 511px;
+        padding: 49px 0 0 31px
+    }
+    &_set {
+        @include flexFullCenter;
+        flex-direction: column;
+        row-gap: 18px;
+        &_top {
+            background:  url('../img/walking_dead.jpg') no-repeat center /cover, #625e5e;
+            background-blend-mode: multiply;
+            a {
+                transition: all 0.3s;
+                &:hover {
+                    color: $sectionsLinksHover;
+                    font-weight: 700;
+                }
+            }
+        }
+        &_bottom {
+            background:  url('../img/actors.jpg') no-repeat center /cover, #625e5e;
+            background-blend-mode: multiply;
+        }
+        div {
+            box-sizing: border-box;
+            background-position: cover;
+            background-repeat: no-repeat;
+            width: 485px;
+            height: 247px;
+            padding: 49px 0 0 31px
+        }
+    }
+}
+
+.trending {
+    @include flexFullCenter;
+    flex-direction: column;
+    margin-bottom: 100px;
+    h2 {
+        margin-bottom: 5px;
+    }
+    &_cat {
+        @include flexFullCenter;
+        gap: 66px;
+        a {
+            @include fontMulish(500, 24, 30);
+            color: $sectionsLinks;
+            text-decoration: none;
+            padding: 45px 0 73px;
+            &:hover {
+                color: $sectionsLinksHover;
+            }
+        }
+    }
+    &_next {
+        width: 100%;
+        text-align: right;
+        margin-top: 20px;
+        margin-right: 50px;
+        button {
+            border-radius: 2px;
+            cursor: pointer;
+            background-color: $bodyBackgroundSecColor;
+            color: $bodyFontColor;
+            @include fontMulish(500, 16, 20);
+            border: 0;
+            margin: 0;
+        }
+    }
+}
+
+.watchlist {
+    text-align: center;
+    margin-bottom: 100px;
+    h2 {
+        margin-bottom: 5px;
+    }
+    &_cat {
+        &_flag {
+            height: 60px;
+            width: 40px;
+            fill: $bodyFontColor;
+            opacity: 0.1;
+        }
+        p {
+            @include fontMulish(700, 24, 30);
+            color: $sectionsLinks;
+            text-decoration: none;
+            margin: 20px;
+            &:hover {
+                color: $sectionsLinksHover;
+            }
+        }
+    }
+}
+
+.product {
+    text-align: center;
+    margin-bottom: 100px;
+    h2 {
+        margin-bottom: 45px;
+    }
+    &_cat {
+        @include flexFullCenter;
+        gap: 66px;
+        a {
+            @include fontMulish(500, 24, 30);
+            color: $sectionsLinks;
+            text-decoration: none;
+            padding: 45px 0 73px;
+            &:hover {
+                color: $sectionsLinksHover;
+            }
+        }
+    }
+}
+
+.dom {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+   // box-sizing: border-box;
+    row-gap: 20px;
+}
+
+.dom_element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 182px;
+    box-sizing: border-box;
+    margin: 10px;
+    position: relative;
+    filter: drop-shadow(0 0 5px $domElementBackgroundColor);
+    border-radius: 5px;
+    &_img {
+        display: inline-block;
+        background-color: $bodyBackgroundColor;
+        cursor: pointer;
+        overflow: hidden;
+        img {
+            box-sizing: border-box;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: 1s;
+            display: block;
+            transform: scale(1.07);      
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        &_main {
+            max-width: 180px;
+            position: relative;
+            &_loader {
+                color: $bodyFontColor;
+                position: absolute; 
+                top: 110px; left: 60px; 
+                z-index: 10;
+            }
+            &_watchlist {
+                &::before {
+                    position: absolute;
+                    height: 30px;
+                    width: 20px;
+                    top: 10px;
+                    left: 8px;
+                    content: "+";
+                    cursor:copy;
+                }
+            }
+        }
+        &_flag {
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            opacity: 0.9;
+            fill: $domElementBackgroundColor;
+            cursor: pointer;
+        }
+    }
+    &_info {
+        box-sizing: border-box;
+        width: 180px;
+        background-color: $domElementBackgroundColor;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &_rating {
+            text-align: left;
+            padding: 10px;
+            span {
+                @include fontMulish(700, 18, 23);
+                color: $domElementRatingColor;
+            }
+        }
+        &_star {
+            height: 15px;
+            width: 15px;
+            fill: $domElementStarColor;
+        }
+    }
+    &_title {
+        @include flexFullCenter;
+        height: 70px;
+    }
+    &_buy {
+        padding: 5px;
+        @include flexBetweenCenter;
+        padding: 5px;
+        &_quantity {
+            @include fontMulish(700, 24, 24);
+            color: $bodyBackgroundSecColor;
+            margin-left: 10px;
+        }
+        &_addtocart {
+            cursor: pointer;
+            //box-sizing: border-box;
+            width: 113px;
+            height: 30px;
+            background-color: $domElementButtonColor;
+            //box-shadow: 0 0 0 1px $sectionsLinksHover;
+            @include fontMulish(700, 16, 24);
+            color: $bodyFontColor;
+            border-radius: 6px;
+        }
+    }
+}
+
+.footer_main {
+    &_top {
+        @include flexBetweenCenter;
+        gap: 20px;
+        > div{
+            min-width: 25%;
+        }
+        &_logo {
+            width: 240px;
+            height: 60px;
+        }
+        &_ic {
+            @include flexBetweenCenter;
+            div {
+                @include flexFullCenter;
+                height: 32px;
+                width: 32px;
+                border: 1px solid $navbarFontColor;
+                border-radius: 16px;
+            }
+        }
+    }
+    &_span {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $domElementRatingColor;
+        margin: 20px;
+    }
+    &_bottom {
+        @include flexBetweenCenter;
+        &_privacy {
+            @include flexFullCenter;
+            gap: 10px;
+        }
+    }
+}
+
+.movie_element {
+    box-sizing: border-box;
+    &_about {
+        box-sizing: border-box;
+        background-color: $domElementBackgroundColor;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 20px 0;
+        @include flexBetweenCenter;
+        justify-content: space-between;
+    }
+    &_title {
+        text-align: left;
+        &_name {
+            @include fontRubik(400, 35, 48);
+            padding-bottom: 7px;
+        }
+        &_year {
+            @include fontRubik(500, 14, 16);
+            color: $domElementRatingColor;
+        }
+    }
+    &_range {
+        padding-top: 10px;
+        display: flex;
+        justify-content: right;
+        align-items:flex-start;
+        gap: 20px;
+        min-width: 400px;
+        @include fontRubik(500, 14, 16);
+        color: $domElementRatingColor;
+        &_content
+            div {
+            @include flexFullCenter;
+            width: 60px;
+            height: 60px;
+            border: 4px solid $domElementRatingColor;
+            border-radius: 60px;
+            @include fontRubik(700, 24, 19);
+        }
+        &_rate {
+            b {
+            @include fontRubik(600, 20, 20);
+            color: $bodyFontColor;
+                span {
+                    @include fontRubik(500, 18, 14);
+                    color: $domElementRatingColor;
+                }
+            }
+        }
+        &_yours {
+            p span {
+            @include fontRubik(600, 20, 20);
+            color: #5799EF;
+            }
+            &_rait {
+                width: 20px;
+                height: 20px;
+                fill: #5799EF;
+            }
+        }
+        &_star {
+            width: 20px;
+            height: 20px;
+            fill: $domElementStarColor;
+        }
+        &_pop {
+            span {
+                @include fontRubik(600, 20, 26);
+                color: $bodyFontColor;
+            }
+        }
+    }
+    &_info {
+        &_media {
+            @include flexBetweenCenter;
+            gap: 10px;
+        }
+        &_image {
+            img {
+                max-height: 450px;
+                width: 308px;
+            }
+        }
+        &_video {
+            width: 810px;
+            height: 450px;
+            //float: none;
+            clear: both;
+            //margin: 2px auto;
+        }
+        &_genre {
+            box-sizing: border-box;
+            background-color: $domElementBackgroundColor;
+            padding: 5px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            color: $domElementRatingColor;
+            display: flex;
+            justify-content:flex-start;
+            align-items: center;
+            gap: 20px;
+            @include fontRubik(600, 20, 26);
+            div {
+                height: 30px;
+                border-radius: 30px;
+                border: 3px solid $domElementRatingColor;
+                padding: 5px 15px;
+                font-weight: 400;
+            }
+        }
+        &_description {
+            box-sizing: border-box;
+            background-color: $domElementBackgroundColor;
+            padding: 5px 20px;
+            border-radius: 5px;
+            p {
+                text-align:justify;
+                @include fontRubik(400, 18, 26);
+            }
+        }
+    }
+}
+
+
+.modal_signin {
+    //box-sizing: border-box;
+    //height: 550px;
+    width: 348px;
+    background-color: $domElementBackgroundColor;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px $navbarFontColor);
+    margin: 40px auto;
+    @include fontRubik(400, 14, 26);
+    padding: 10px;
+    text-align: center;
+    &_alert {
+        position: relative;
+        border: 1px solid $alertColor;
+        margin: 5px 5px 20px;
+        img {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            left: 10px;
+            top: 60px;
+            vertical-align: top;
+        }
+        &_list {
+            text-align: left;
+            padding-left: 80px;
+        }
+    }
+    div {
+        padding-bottom: 12px;
+    }
+    &_account {
+        @include fontRubik(200, 30, 20);
+        margin: 0;
+        padding-bottom: 15px;
+    }
+    p {
+        margin: 0;
+        text-align: left;
+        margin-left: 5px;
+    }
+
+    input {
+        box-sizing: border-box;
+        height: 35px;
+        width: 330px;
+        border-radius: 5px;
+    }
+    &_password {
+        span {
+        display: inline-block;
+        }
+    }
+    &_buttonblock {
+        margin: 0 auto;
+        width: 97%;
+    }
+
+    button {
+        cursor: pointer;
+        //text-align: center;
+        box-sizing: border-box;
+        height: 35px;
+        width: 330px;
+        background-color: $bodyBackgroundSecColor;
+        border-radius: 5px;
+        filter: drop-shadow(0 0 5px $navbarFontColor);
+        //margin: 5px auto;
+        @include fontRubik(400, 14, 26);
+    }
+    &_loglink  {
+        display: inline-block;
+        color: $bodyFontColor;
+    }
+}
+
+
+.modal_login {
+    //box-sizing: border-box;
+    //height: 550px;
+    width: 348px;
+    background-color: $domElementBackgroundColor;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px $navbarFontColor);
+    margin: 40px auto;
+    @include fontRubik(400, 14, 26);
+    padding: 10px;
+    text-align: center;
+    div {
+        padding-bottom: 12px;
+    }
+    &_account {
+        @include fontRubik(200, 30, 20);
+        margin: 0;
+        padding-bottom: 15px;
+    }
+    p {
+        margin: 0;
+        text-align: left;
+        margin-left: 5px;
+    }
+    input {
+        box-sizing: border-box;
+        height: 35px;
+        width: 330px;
+        border-radius: 5px;
+    }
+    &_span {
+        display: block;
+        color: $alertColor;
+        }
+    &_buttonblock {
+        margin: 0 auto;
+        width: 97%;
+        &_signin {
+            border: 1px solid $domElementRatingColor;
+        }
+    }
+    button {
+        cursor: pointer;
+        //text-align: center;
+        box-sizing: border-box;
+        height: 35px;
+        width: 330px;
+        background-color: $bodyBackgroundSecColor;
+        border-radius: 5px;
+        filter: drop-shadow(0 0 5px $navbarFontColor);
+        //margin: 5px auto;
+        @include fontRubik(400, 14, 26);
+    }
+    &_keepsigned {
+        display: flex;
+        line-height: 20px;
+        &_check[type=checkbox] {
+            display: block;
+            height: 13px;
+            width: 13px;
+        }
+    }
+}
+
+.needtosign_alert {
+    color: $alertColor;
+    display: inline;
+    text-align: center;
+}
+
+.needtologin_alert {
+    color: $alertColor;
+    display: inline;
+    text-align: center;
+}
+
+.modal_cart {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;    
+    position: absolute;
+    top: -500px;
+    right: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: $domElementBackgroundColor;
+    width: 320px;
+    max-height: 700px;
+    padding: 5px;
+    z-index: 0;
+    transition: all 2s;
+    &_minus,  &_plus {
+        cursor: pointer;
+        background-color: $domElementBackgroundColor;
+        min-height: 30px;
+        min-width: 30px;
+        border-radius: 20px;
+        color: $bodyFontColor;
+        margin: 0 10px;
+        font: inherit;
+        transition: all 0.5s;
+        &:hover {
+            background-color: $sectionsLinksHover;
+        }
+    } 
+    &_show {
+        top: 220px;
+    }
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+        background-color: $bodyBackgroundSecColor;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #00c6fb, #005bea);
+    }
+    &_element {
+        //margin: 0 7px;
+        background-color: $containerBackgroundColor;
+        width: auto;
+        height: 180px;
+        border-radius: 10px;
+        padding: 10px;
+        &_info {
+            display: flex;
+            &_picture {
+                img {
+                    width: 70px;
+                    height: 100px;
+                    border-radius: 10px;
+                    margin: 5px;
+                }
+            }
+            &_name {
+                padding-top: 3px;
+                @include flexFullCenter;
+                align-items: flex-start;
+                @include fontRubik(400, 18, 20);
+            }
+        }
+        &_total {
+            p {
+                display: inline;
+                text-align: left;
+                @include fontRubik(600, 20, 20);
+                color: $navbarFontColor;
+                margin: 10px;
+                span {
+                    @include fontRubik(400, 20, 20);
+                    color: $bodyFontColor;
+                }
+
+            }
+        }
+    }
+    &_divider {
+        border: none;
+        margin-top: 3px;
+        height: 2px;
+        background-color: $domElementBackgroundColor;
+    }
+    &_total {
+        p {
+            text-align: left;
+            @include fontRubik(600, 20, 20);
+            color: $bodyFontColor;
+            margin: 10px;
+            span {
+                @include fontRubik(400, 20, 20);
+                color: $bodyFontColor;
+            }
+        }
+    }
+}
+
+.loader {
+	border: 10px dotted $bodyFontColor;
+	border-radius: 50%;
+	animation: 1.5s loader-01 linear infinite;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	color: inherit;
+	vertical-align: middle;
+	pointer-events: none;
+}
+
+@keyframes loader-01 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.modal_chat {
+    background-color: $navbarBackgroundColor;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 10px;
+    right: 20px;
+    height: 40px;
+    width: 350px;
+    transition: all 1s;
+    &_name {
+        box-sizing: border-box;
+        @include flexBetweenCenter;
+        gap: 10px;
+        padding: 0px 5px 0 5px;
+        //margin: 5px;
+        text-align: right;
+        @include fontRubik(500, 16, 18);
+        color: $bodyBackgroundColor;
+        &_text {
+            max-width: 260px;
+            padding: 3px 10px;
+            margin: 0;
+        }
+        &_arrow {
+            @include flexFullCenter;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            box-sizing: border-box;
+            margin: 5px 5px 5px 20px;
+            transform: rotate(0.5turn);
+            border: 0;
+            border-radius: 20px;
+            background-color: inherit;
+        }
+        .arrow_down {
+            box-sizing: border-box;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $bodyBackgroundColor;
+            border-right: 2px solid $bodyBackgroundColor;
+            transform: rotate(-45deg);
+            transition: all 1s;
+            &:hover {
+                transform: scale(2) rotate(-45deg) ;
+            }
+        }
+        .arrow_up {
+            box-sizing: border-box;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $bodyBackgroundColor;
+            border-right: 2px solid $bodyBackgroundColor;
+            transform: rotate(135deg);
+            transition: all 1s;
+            &:hover {
+                transform: scale(2) rotate(135deg) ;
+            }
+        }
+    }
+   &_text {
+    margin: 3px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-sizing: border-box;
+    border: 10px solid $navbarFontColor;
+    height: 82%;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 7px;
+    color: $bodyBackgroundColor;
+    background-color: $bodyBackgroundSecColor;
+        &_window {
+            display: inline;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+        &_bubble {
+            margin: 5px 0;
+            display: block;
+            padding: 2px;
+            border-radius: 5px;
+            background-color: $navbarBackgroundColor;
+            &_admin {
+                margin: 5px 0;
+                display: block;
+                padding: 2px;
+                border-radius: 10px;
+                background-color: $domElementStarColor;
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+            background-color: $bodyBackgroundSecColor;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: linear-gradient(180deg, #00c6fb, #005bea);
+        }
+    }
+    &_message {
+        input[type="text"] {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 25px;
+        margin-left: 5px;
+        margin-top: 3px;
+        text-align: center;
+        box-sizing: border-box;
+        width: 80%;
+        height: 40px;
+        border: 2px solid $navbarFontColor;
+        padding: 0 0 0 15px;
+        text-align: left;
+        font-size: 18px;
+        }
+        &_button {
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            height: 40px;
+            border: 2px solid $navbarFontColor;
+            box-sizing: border-box;
+            width: 14%;
+            padding: 0;
+            margin-left: 2px;
+            margin-top: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            &:hover {
+                background-color: $navbarFontColor;
+            }
+            &:active {
+                background-color: $sectionsLinks;
+            }
+        }
+    }
+}
+
+.chat_window_open {
+    height: 550px;
+}
+
+.modal_user {
+    padding: 0;
+    position: absolute;
+    top: 145px;
+    right: 0;
+    background-color: $domElementRatingColor;
+    width: 200px;
+    height: 75px;
+    z-index: 10;
+    &_list {
+        padding: 0;
+        margin: 10px;
+        list-style: none;
+        @include fontRubik(500, 16, 16);
+        &_span {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 10px 0;
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: $bodyFontColor;
+        }
+        &_logout {
+            cursor: pointer;
+            &:hover {
+                color: $navbarFontColor;
+            }
+            &:active {
+                color: $sectionsLinksHover;
+            }
+        }
+    }
+}
+
+//SLIDER
+
+.container_slider_css{
+    padding-top: 20px;
+    margin:0 auto;
+    width:1100px;
+    height:500px;
+    overflow:hidden;
+    position:relative;
+}
+
+.photo_slider_css{
+    position:absolute;
+    animation:round 16s infinite;
+    opacity:0;
+    width:100%;
+}
+
+@keyframes round {
+25%{opacity:1}
+40%{opacity:0}
+}
+
+img:nth-child(1){
+    animation-delay:12s
+}
+img:nth-child(2){
+    animation-delay:8s
+}
+img:nth-child(3){
+    animation-delay:4s
+}
+img:nth-child(4){
+    animation-delay:0
+}
+@media(min-width:0px) and (max-width:320px) {
+.container_slider_css{width:80%;height:190px}
+}
+@media(min-width:321px) and (max-width:480px) {
+.container_slider_css{width:80%;height:190px}
+}
+
+//END OF SLIDER
